@@ -29,11 +29,22 @@
     <body>
     <h1>Products</h1>
     <?php foreach($plastic as $plastic) : ?>
+
+
+
+
       <div class="well">
         <h3><?php echo $plastic['product_name']; ?></h3>
-        <small>Plastic Rating: <?php echo $plastic['plastic_rating']; ?> ID: <?php echo $plastic['ID']; ?></small>
-        <p>Product category:<?php echo $plastic['product_category']?></p>
+
+
+        Price: <?php echo $plastic['price']; ?> Unit Price: <?php echo $plastic['unit_price']; ?></br>
+        Plastic Rating: <?php echo $plastic['plastic_rating']; ?></br>
+        Product category:<?php echo $plastic['product_category']?></br>
+        <p><small>ID: <?php echo $plastic['ID']; ?></small></p>
         </div>
     <?php endforeach; ?>
+
+
+
     </body>
 </html>
