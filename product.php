@@ -1,15 +1,17 @@
 <?php
-  require('config/config.php');
-  require('config/db.php');
+  require('db.php');
+
+  // get ID
+  $id = mysqli_real_escape_string($conn, $_GET['id']);
 
   // Create Query
-  $query = 'SELECT * FROM product';
+  $query = 'SELECT * FROM product WHERE id = ' .$id;
 
   // Get ibase_free_result
   $result = mysqli_query($conn, $query);
 
   //Fetch Data
-  $plastic = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  $plastic = mysqli_fetch_assoc($result);
   //var_dump($plastic);
 
   //Free Result
@@ -55,20 +57,17 @@
         <!-- Thumbnails -->
 
 
-        <?php foreach($plastic as $plastic) : ?>
 
           <div class="thumb">
-            <h3><?php echo $plastic['product_name']; ?></h3>                                                  <!--  /* Title */ -->
+            <h1><?php echo $plastic['product_name']; ?></h1>                                                  <!--  /* Title */ -->
 
             <img class="photoframe" src="<?php echo $plastic['image_link']; ?>"> </br>                                           <!--  /* Image link */    -->
             Price: <?php echo $plastic['price']; ?> Unit Price: <?php echo $plastic['unit_price']; ?></br>    <!--  /* Price */         -->
             Plastic Rating: <?php echo $plastic['plastic_rating']; ?></br>                                    <!--  /* Crunch plastic star rating */ -->
-            <!-- <p><small>ID: <?php echo $plastic['ID']; ?></small></p> -->
-            <a class="btn btn-default" href="<?php echo ROOT_URL; ?>?id=<?php echo $plastic['id']; ?>">Read More</a>
+            <p><small>ID: <?php echo $plastic['ID']; ?></small></p>
                                                   <!--  /* Crunch ID */     -->
           </div>
           </br>
-        <?php endforeach; ?>
                                                                                        <!--  /* Repeat Printing */            -->
     </div>
 
