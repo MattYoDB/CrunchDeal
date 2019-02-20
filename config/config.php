@@ -4,4 +4,3 @@
   define('DB_USER', 'root');
   define('DB_PASS', 'caf');
   define('DB_NAME', 'cruchdata');
-?>

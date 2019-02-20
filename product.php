@@ -1,11 +1,11 @@
 <?php
-  require('db.php');
+  require('config/db.php');
 
   // get ID
   $id = mysqli_real_escape_string($conn, $_GET['id']);
 
   // Create Query
-  $query = 'SELECT * FROM product WHERE id = ' .$id;
+  $query = 'SELECT * FROM product WHERE id = '.$id;
 
   // Get ibase_free_result
   $result = mysqli_query($conn, $query);

@@ -23,29 +23,9 @@
 
 
 
-<!-- HTML BEGINS -->
+<!-- HTML BEGINS from
+<body> -->
 
-<!DOCTYPE html>
-  <html>
-    <head>
-      <title>Front End Shopper</title>
-      <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
-
-      <style>
-      .thumb{
-        border: 3px solid #73AD21;
-        max-width:320px;
-        height: 370px;
-      }
-      .photoframe{
-        height:200px;
-        width:auto;
-      }
-      </style>
-
-
-    </head>
-    <body>
       <div class="container">
         <h1>Products</h1>
 
@@ -53,8 +33,7 @@
 
 
         <!-- Thumbnails -->
-
-
+        <?php include('inc/header.php'); ?>
         <?php foreach($plastic as $plastic) : ?>
 
           <div class="thumb">
@@ -64,17 +43,13 @@
             Price: <?php echo $plastic['price']; ?> Unit Price: <?php echo $plastic['unit_price']; ?></br>    <!--  /* Price */         -->
             Plastic Rating: <?php echo $plastic['plastic_rating']; ?></br>                                    <!--  /* Crunch plastic star rating */ -->
             <!-- <p><small>ID: <?php echo $plastic['ID']; ?></small></p> -->
-            <a class="btn btn-default" href="<?php echo ROOT_URL; ?>?id=<?php echo $plastic['id']; ?>">Read More</a>
+            <a class="btn btn-default" href="http://localhost/phpbox/product.php?id=<?php echo $plastic['id']; ?>">Read More</a>   <!-- ** TO DO ** Compress link with config.php -->
                                                   <!--  /* Crunch ID */     -->
           </div>
           </br>
         <?php endforeach; ?>
-                                                                                       <!--  /* Repeat Printing */            -->
+    <!--  /* Repeat Printing */            -->
     </div>
-
     <!-- End of thumbnails -->
-
-
-
-    </body>
-</html>
+    <!-- </body -->
+    <?php include('inc/footer.php'); ?>
