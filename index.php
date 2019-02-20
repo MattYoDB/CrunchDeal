@@ -28,20 +28,27 @@
     </head>
     <body>
     <h1>Products</h1>
+
+
+
+
     <?php foreach($plastic as $plastic) : ?>
 
 
 
 
       <div class="well">
-        <h3><?php echo $plastic['product_name']; ?></h3>
+        <h3><?php echo $plastic['product_name']; ?></h3> <!--  /* Title */ -->
 
+        <img src="<?php echo $plastic['image_link']; ?>">  <!--  /* Image link */ -->
 
-        Price: <?php echo $plastic['price']; ?> Unit Price: <?php echo $plastic['unit_price']; ?></br>
-        Plastic Rating: <?php echo $plastic['plastic_rating']; ?></br>
-        Product category:<?php echo $plastic['product_category']?></br>
+        Price: <?php echo $plastic['price']; ?> Unit Price: <?php echo $plastic['unit_price']; ?></br> <!--  /* Price */ -->
+        Plastic Rating: <?php echo $plastic['plastic_rating']; ?></br>     <!--  /* Crunch plastic star rating */ -->
         <p><small>ID: <?php echo $plastic['ID']; ?></small></p>
         </div>
+
+
+
     <?php endforeach; ?>
 
 
